@@ -17,9 +17,8 @@
     - [Presentation](#presentation)
   - [Key Guidelines](#key-guidelines)
     - [AI Collaboration](#ai-collaboration)
-    - [Team Coordination](#team-coordination)
     - [Quality Assurance](#quality-assurance)
-    - [Success Criteria](#success-criteria-1)
+    - [Success Criteria](#success-criteria)
 
 ## Workshop
 
@@ -67,10 +66,8 @@ Follow these four steps consistently throughout the workshop:
 - **Pair Formation**: Form teams (1 frontend + 1 backend developer)
 - **Repository Setup**: Following [Getting Started](#getting-started)
 - **Specification Development**:
-  - Once you have completed [Getting Started](#getting-started), both developers should work together on one computer for the rest of the Conception phase.
-  * Sitting on the same computer, you should initialise a new instance of Claude Code. Use the GENERATE SPECS prompt to have a conversation with Claude and determine the specifications of your project. You should be discussing each answer with each other before sending it to Claude. This is a collaborative effort!
-  * Use SPEC WRAP-UP prompt - this should create `FUNCTIONAL.md`, `ARCHITECTURE.md`, and `CLAUDE.md` files.
-  * Push everything to your repo.
+  - Initialise a new instance of Claude Code. Use the GENERATE SPECS prompt to have a conversation with Claude and determine the specifications of your project.
+  - Use SPEC WRAP-UP prompt - this should create `FUNCTIONAL.md`, `ARCHITECTURE.md`, and `CLAUDE.md` files.
 
 > **Output**: Initial documentation pushed to repo
 
@@ -79,18 +76,14 @@ Follow these four steps consistently throughout the workshop:
 > [!WARNING]  
 > Set up your environment, install your dependencies etc. **manually**. AI can be terrible at this and using AI for setup could add a lot of config issues to your project before you can even get started.
 
-- **Parallel Setup (now working on separate machines, using normal Git practices e.g. working on different branches)**:
+- Use the GENERATE TICKETS prompt to create `TICKETS.md`. Remember to follow the IQRE methodology! Check that your tickets actually make sense so that you don't end up with a lot of vague, impossibly scoped tickets that no one could follow!
+- Set up environment, frameworks, folder structure, install dependencies
 
-  - **Frontend Dev**: Use the GENERATE TICKETS prompt to create `TICKETS.md`. Remember to follow the IQRE methodology! Check that your tickets actually make sense so that you don't end up with a lot of vague, impossibly scoped tickets that no one could follow!
-  - **Backend Dev**: Set up environment, frameworks, folder structure, install dependencies
-
-- **Coordination**: Review tickets for dependencies and overlaps
+- Review tickets for dependencies and overlaps
 
 > **Output**: Ready-to-code environment with structured tickets
 
 #### IMPLEMENTATION
-
-Work on individual machines with separate Claude Code instances.
 
 **Per Ticket Process**:
 
@@ -104,11 +97,11 @@ Work on individual machines with separate Claude Code instances.
 - Coordinate dependencies with teammate
 - Update `CLAUDE.md` with learned standards
 
-> **Output**: Incremental feature completion with documented PRs
+> **Output**: Incremental feature completion
 
 #### CONTEXT MANAGEMENT
 
-- Use `HISTORY\_[NAME].md` for context summaries
+- Use `HISTORY.md` for context summaries
 - Reset Claude's context window after each ticket
 - Maintain clean workspace
 
@@ -116,7 +109,7 @@ Work on individual machines with separate Claude Code instances.
 
 #### PRESENTATION
 
-- Demo Kanban board
+- Demo your project
 - Show AI collaboration examples
 - Present evolved standards
 - Reflect on deliberate architectural decisions
@@ -133,12 +126,6 @@ Work on individual machines with separate Claude Code instances.
 - **Context Management**: Use CONTEXT RESET prompt to maintain clarity
 - **Standards Evolution**: Update `CLAUDE.md` when discovering new patterns
 
-#### Team Coordination
-
-- **Sync Regularly**: During designated progress sessions
-- **Check Dependencies**: Use DEPENDENCY CHECK prompt when unclear
-- **Share Learnings**: Document architectural decisions and standard updates
-
 #### Quality Assurance
 
 - **Follow IQRE**: Apply the four steps consistently
@@ -147,7 +134,6 @@ Work on individual machines with separate Claude Code instances.
 
 #### Success Criteria
 
-- Functional Kanban board with task management
 - Effective AI collaboration patterns
 - Evolved standards documented in `CLAUDE.md`
 - Clear architectural decisions

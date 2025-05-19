@@ -1,4 +1,4 @@
-# Agentic Workflows & Human–AI Pair Programming in Real Development
+# AI Assisted Development
 
 ## Table of Contents
 

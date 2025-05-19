@@ -19,10 +19,10 @@ These are the prompts you can use to do so:
 ### GENERATE SPECS
 
 > [!NOTE]
-> Resist the urge of being too ambitious here, remember you must finish building this and fully understand, be able to explain it by the end of the day. This is _just_ a simple kanban board. The aim is simply to make sure it is built the way you want/dictate.
+> Resist the urge of being too ambitious here, remember you are aiming to finish building this and fully understand, be able to explain it by the end of the day.
 
 ```markdown
-We're going to discuss the specification for a software project. I am working in team of 2 people, each pair-programming with an AI (we each have the workshop repo cloned to our machines, and each have an instance of Claude Code running inside that repo) in the context of an AI-assisted development workshop. The project details are contained in `BRIEF.md` and workshop details are in `README.md`.
+We're going to discuss the specification for a software project.
 
 Ask me one question at a time so we can develop thorough, step-by-step specs. Each question should build on my previous answers, and our end goal is to have a detailed specification I can hand off to a developer. This will be built in only a few hours so try and keep the conversation short, apply KISS principles and use logical inference based on previous answers when possible.
 
@@ -87,7 +87,7 @@ During implementation, there are a number of prompts you can use at the start of
 ### KICKOFF / REFRESH MEMORY
 
 > [!IMPORTANT]  
-> This prompt contains placeholders `NAME`, and `TICKET_NUMBER` to be filled in. At the end of the below text, you should add your instructions to the LLM to complete the prompt (this can often be taken from the ticket you are working on). Remove the sentence asking to check `HISTORY_[NAME].md` on first ticket as this will be the first code interaction.
+> This prompt contains the placeholders `TICKET_NUMBER` to be filled in. At the end of the below text, you should add your instructions to the LLM to complete the prompt (this can often be taken from the ticket you are working on). Remove the sentence asking to check `HISTORY.md` on first ticket as this will be the first code interaction.
 
 > [!NOTE]
 > Always clear context window before using this prompt.
@@ -95,9 +95,9 @@ During implementation, there are a number of prompts you can use at the start of
 ```markdown
 **First, review `CLAUDE.md` to understand our project standards and workflow.**
 
-Then refresh your memory by checking `HISTORY_[NAME].md`. Review the `ARCHITECTURE.md` and `FUNCTIONAL.md` to understand what we are building.
+Then refresh your memory by checking `HISTORY.md`. Review the `ARCHITECTURE.md` and `FUNCTIONAL.md` to understand what we are building.
 
-We are working through `TICKETS.md` and are on ticket [TICKET_NUMBER] (I'm [NAME]).
+We are working through `TICKETS.md` and are on ticket [TICKET_NUMBER].
 
 **Before implementing anything:**
 
@@ -136,12 +136,12 @@ Only proceed when dependencies are satisfied and coordination is clear.
 ### CONTEXT RESET
 
 > [!NOTE]
-> You must use this prompt after each ticket.
+> You should use this prompt after each ticket.
 
 ```markdown
 Now we will reset the context window, before we do so:
 
-1. Create/update a `HISTORY_[NAME].md` file summarising our progress
+1. Create/update a `HISTORY.md` file summarising our progress
 2. List completed tickets with key implementation details
 3. Note any important decisions or patterns established
 4. Mention any deviations from original specs and why

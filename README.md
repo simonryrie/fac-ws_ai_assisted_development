@@ -1,5 +1,7 @@
 # AI Assisted Development
 
+![Screenshot 2025-05-19 at 16 18 02](https://github.com/user-attachments/assets/885d196b-e9b8-47ee-84de-d4533c42f3b7)
+
 ## Table of Contents
 
 - [Workshop](#workshop)

@@ -30,7 +30,7 @@ In this workshop, you'll work in human-AI pairs to build a travel planning appli
 
 ### Getting Started
 
-Create a new repository [using this repository as a template](https://github.com/new?template_name=fac-ws_ai_pair-programming&template_owner=TandemCreativeDev).
+Create a new repository [using this repository as a template](https://github.com/new?template_name=fac-ws_ai_assisted_development&template_owner=TandemCreativeDev).
 
 ## Task
 

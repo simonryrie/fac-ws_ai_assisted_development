@@ -1,38 +1,39 @@
-# Kanban Board: Brief
+# Travel Planning App: Brief
 
 ### Overview
 
-In this task, you, your teammate and your AI partners will build a collaborative Kanban board application. The goal is to create a local web app where users can manage tasks by adding, updating, and moving them between columns: "To Do", "Doing", and "Done".
+In this task, you, will build a travel planning application. The goal is to create a web app where users can manage trips, plan itineraries, check weather conditions, manage packing lists, track budgets, and book flights.
 
-### Core Features
+### Potential Features (Please pick 2 or 3 to keep your app within the scope of today's workshop)
 
-1. **Static Board UI**:
+1. **Trip Management**:
 
-- Three columns ("To Do", "Doing", "Done").
-- UI components for board layout and task cards.
+- Create, edit, and delete trips.
+- Organise trip details including dates, locations, and activities.
 
-2. **Live Data Integration**:
+2. **Itinerary Planner**:
 
-- Use a database to store tasks.
-- API endpoints for getting and updating tasks.
-- UI updates dynamically from the database.
+- Add activities with dates, times, and locations.
+- Update and manage itinerary details.
 
-3. **Task Management**:
+3. **Weather Checker**:
 
-- Add new tasks via a form.
-- Update task status (move between columns).
-- Delete tasks.
-- Data persistence in the database.
+- Display weather information based on the selected location.
 
-4. **Documentation**:
+4. **Packing Lists**:
 
-- Human-edited README and `CLAUDE.md` with project overview and key commands.
+- Create and manage lists of items to pack.
+- Mark items as packed.
 
-We will not be building in authentication or deployment in this project, so you don't have to plan for them.
+5. **Budget & Expense Tracking**:
 
-### Success Criteria
+- Track expenses and budget for each trip.
+- Update and view spending details.
 
-A successful project will:
+### Technical Focus
 
-- Load tasks from the database and display them in the correct columns.
-- Allow users to add, move, delete and complete tasks through the UI.
+- **Data Flow**: Efficient frontend-backend interaction.
+- **API Structure**: Consider using REST or GraphQL.
+- **State Management**: Choose a robust strategy for handling application state.
+- **Database Schema**: Decide between relational (SQL) or non-relational (NoSQL) databases.
+- **Modularisation**: Implement a scalable architecture for maintainability.

@@ -24,19 +24,11 @@
 
 ### Overview
 
-In this workshop, you'll work in human-AI pairs to build a Kanban board application using Claude Code as your AI partner. The focus is on practicing effective AI-assisted development, improving prompt hygiene, and fostering human oversight while collaborating with AI.
-
-### What to Expect
-
-You will:
-
-- Collaborate with both human teammates and AI partners.
-- Develop a Kanban board application as a team.
-- Practice prompt refinement and iterative AI guidance.
+In this workshop, you'll work in human-AI pairs to build a travel planning application using Claude Code as your AI partner. The focus is on practicing effective AI-assisted development, improving prompt hygiene, and fostering human oversight while collaborating with AI.
 
 ### Getting Started
 
-One developer on your team should create a new repository [using this repository as a template](https://github.com/new?template_name=fac-ws_ai_pair-programming&template_owner=TandemCreativeDev). After this, add your other team member [as a collaborator](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository) for that repo.
+Create a new repository [using this repository as a template](https://github.com/new?template_name=fac-ws_ai_pair-programming&template_owner=TandemCreativeDev).
 
 ## Task
 

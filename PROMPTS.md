@@ -1,7 +1,7 @@
 # Prompts for Claude
 
 > [!IMPORTANT]  
-> There are plenty of placeholders throughout these prompts which need to be filled before use or if you direct Claude to this document you can indicate what those are. For instance, "Follow 'KICKOFF / REFRESH MEMORY' in `PROMPTS.md` - fill the placeholder with `TICKET_NUMBER=2
+> There are plenty of placeholders throughout these prompts which need to be filled before use or if you direct Claude to this document you can indicate what those are. For instance, "Follow 'KICKOFF / REFRESH MEMORY' in `PROMPTS.md` - fill the `TASK_NUMBER `placeholder with `2`.
 
 ## Conception
 
@@ -10,7 +10,7 @@ The first step is to develop your own set of specifications, requirements and st
 1. **FUNCTIONAL.md** - Complete functional requirements
 2. **ARCHITECTURE.md** - Detailed project architecture
 3. **CLAUDE.md** - Compact standards and guidelines
-4. **TICKETS.md** - Ordered tasks/features to complete the project collaboratively
+4. **TO-DO.md** - Ordered tasks/features to complete the project collaboratively
 
 These are the prompts you can use to do so:
 
@@ -47,41 +47,39 @@ For `CLAUDE.md`, follow the existing template but ensure each section includes s
 Make each specification modular and cross-referenced so developers can quickly find relevant information when prompted to check these files. Do not repeat yourself.
 ```
 
-### GENERATE TICKETS
+### GENERATE TO-DO
 
 ```markdown
 Review `CLAUDE.md` first to understand our standards. Then review `FUNCTIONAL.md` and `ARCHITECTURE.md` to understand what we're building.
 
-Break the project down into manageable, atomic tickets that:
+Break the project down into manageable, atomic to-do tasks that:
 
-- Split cleanly between frontend and backend
 - Build on each other logically
-- Minimise overlap for simultaneous development
 - Are small enough to complete in one session
 
-Generate `TICKETS.md` with:
+Generate `TO-DO.md` with:
 
-1. Clear dependencies between tickets
+1. Clear dependencies between to-do tasks
 2. Explicit prerequisites listed
 
-Each ticket should include:
+Each to-do item should include:
 
 - Brief description
 - Specific deliverables
 - Dependencies (if any)
 - Definition of done
 
-**Important**: Order tickets by dependency, ensuring both developers can work efficiently and logically through the tickets in order, without blocking each other.
+**Important**: Order to-do tasks by dependency, ensuring you can work efficiently and logically through them in order.
 ```
 
 ## Implementation
 
-During implementation, there are a number of prompts you can use at the start of each ticket (KICKOFF / REFRESH MEMORY) or after each ticket (CONTEXT RESET). Included is also a DEPENDENCY CHECK prompt to be used if anything is unclear, remember to also check in with your teammate regularly to iron out anything that is unclear or overlapping.
+During implementation, there are a number of prompts you can use at the start of each task (KICKOFF / REFRESH MEMORY) or after each task (CONTEXT RESET). Included is also a DEPENDENCY CHECK prompt to be used if anything is unclear, remember to also check in with your teammate regularly to iron out anything that is unclear or overlapping.
 
 ### KICKOFF / REFRESH MEMORY
 
 > [!IMPORTANT]  
-> This prompt contains the placeholders `TICKET_NUMBER` to be filled in. At the end of the below text, you should add your instructions to the LLM to complete the prompt (this can often be taken from the ticket you are working on). Remove the sentence asking to check `HISTORY.md` on first ticket as this will be the first code interaction.
+> This prompt contains the placeholders `TASK_NUMBER` to be filled in. At the end of the below text, you should add your instructions to the LLM to complete the prompt (this can often be taken from the task you are working on). Remove the sentence asking to check `HISTORY.md` on first task as this will be the first code interaction.
 
 > [!NOTE]
 > Always clear context window before using this prompt.
@@ -91,13 +89,13 @@ During implementation, there are a number of prompts you can use at the start of
 
 Then refresh your memory by checking `HISTORY.md`. Review the `ARCHITECTURE.md` and `FUNCTIONAL.md` to understand what we are building.
 
-We are working through `TICKETS.md` and are on ticket [TICKET_NUMBER].
+We are working through `TO-DO.md` and are on task [`TASK_NUMBER`].
 
 **Before implementing anything:**
 
-1. Confirm you understand the current ticket requirements
+1. Confirm you understand the current task requirements
 2. Ask if you should reference any specific standards from `CLAUDE.md`
-3. Only implement what's specified in this ticket
+3. Only implement what's specified in this task
 
 As you implement, explain:
 
@@ -111,16 +109,16 @@ Now, [THIS IS WHERE YOU CAN TYPE YOUR PROMPT...]
 ### DEPENDENCY CHECK
 
 > [!IMPORTANT]  
-> This prompt contains variable `TICKET_NUMBER` to be filled in.
+> This prompt contains variable `TASK_NUMBER` to be filled in.
 
 > [!NOTE]
-> Use this prompt if ticket dependencies or scope is unclear or overlapping.
+> Use this prompt if task dependencies or scope is unclear or overlapping.
 
 ```markdown
-Before starting this ticket [TICKET_NUMBER], check `TICKETS.md` for dependencies. Then:
+Before starting this task [`TASK_NUMBER`], check `TO-DO.md` for dependencies. Then:
 
-1. Verify all prerequisite tickets are complete
-2. Confirm our implementation aligns with dependent tickets
+1. Verify all prerequisite tasks are complete
+2. Confirm our implementation aligns with dependent tasks
 3. Check if any shared interfaces or data structures need coordination with your teammate
 4. Flag any potential conflicts with work in progress
 
@@ -130,13 +128,13 @@ Only proceed when dependencies are satisfied and coordination is clear.
 ### CONTEXT RESET
 
 > [!NOTE]
-> You should use this prompt after each ticket.
+> You should use this prompt after each task.
 
 ```markdown
 Now we will reset the context window, before we do so:
 
 1. Create/update a `HISTORY.md` file summarising our progress
-2. List completed tickets with key implementation details
+2. List completed tasks with key implementation details
 3. Note any important decisions or patterns established
 4. Mention any deviations from original specs and why
 5. Save current state of key variables/configurations

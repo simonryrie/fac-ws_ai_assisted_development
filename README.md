@@ -13,7 +13,7 @@
   - [IQRE Process](#iqre-process)
   - [Workshop Phases](#workshop-phases)
     - [Conception](#conception)
-    - [Environment & Tickets](#environment--tickets)
+    - [Environment & Tasks](#environment--tasks)
     - [Implementation](#implementation)
     - [Context Management](#context-management)
     - [Presentation](#presentation)
@@ -65,12 +65,12 @@ Follow these four steps consistently throughout the workshop:
 
 > **Output**: Initial documentation pushed to repo
 
-#### ENVIRONMENT & TICKETS
+#### ENVIRONMENT & TASKS
 
 > [!WARNING]  
 > Set up your environment, install your dependencies etc. **manually**. AI can be terrible at this and using AI for setup could add a lot of config issues to your project before you can even get started.
 
-- Use the GENERATE TICKETS prompt to create `TICKETS.md`. Remember to follow the IQRE methodology! Check that your tickets actually make sense so that you don't end up with a lot of vague, impossibly scoped tickets that no one could follow!
+- Use the GENERATE TICKETS prompt to create `TO-DO.md`. Remember to follow the IQRE methodology! Check that your tickets actually make sense so that you don't end up with a lot of vague, impossibly scoped tickets that no one could follow!
 - Set up environment, frameworks, folder structure, install dependencies
 
 - Review tickets for dependencies and overlaps

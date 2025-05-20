@@ -62,7 +62,7 @@ Generate `TO-DO.md` with:
 1. Clear dependencies between to-do tasks
 2. Explicit prerequisites listed
 
-Each to-do item should include:
+Each to-do task should be numbered sequentially, and include:
 
 - Brief description
 - Specific deliverables

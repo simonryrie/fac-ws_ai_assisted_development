@@ -1,7 +1,7 @@
 # Prompts for Claude
 
 > [!IMPORTANT]  
-> There are plenty of placeholders throughout these prompts which need to be filled before use or if you direct Claude to this document you can indicate what those are. For instance, "Follow 'KICKOFF / REFRESH MEMORY' in `PROMPTS.md` - fill placeholders with `TICKET_NUMBER=2`, `NAME='Max'` and `PROMPT='Create data.json'`"
+> There are plenty of placeholders throughout these prompts which need to be filled before use or if you direct Claude to this document you can indicate what those are. For instance, "Follow 'KICKOFF / REFRESH MEMORY' in `PROMPTS.md` - fill the placeholder with `TICKET_NUMBER=2
 
 ## Conception
 
@@ -65,16 +65,13 @@ Break the project down into manageable, atomic tickets that:
 Generate `TICKETS.md` with:
 
 1. Clear dependencies between tickets
-2. Frontend tickets assigned to [DEV1_NAME]
-3. Backend tickets assigned to [DEV2_NAME]
-4. Explicit prerequisites listed
+2. Explicit prerequisites listed
 
 Each ticket should include:
 
 - Brief description
 - Specific deliverables
 - Dependencies (if any)
-- Assignee
 - Definition of done
 
 **Important**: Order tickets by dependency, ensuring both developers can work efficiently and logically through the tickets in order, without blocking each other.

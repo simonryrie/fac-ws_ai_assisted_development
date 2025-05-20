@@ -49,9 +49,6 @@ Make each specification modular and cross-referenced so developers can quickly f
 
 ### GENERATE TICKETS
 
-> [!IMPORTANT]  
-> This prompt contains placeholders `DEV1_NAME` and `DEV2_NAME` to be filled in.
-
 ```markdown
 Review `CLAUDE.md` first to understand our standards. Then review `FUNCTIONAL.md` and `ARCHITECTURE.md` to understand what we're building.
 

@@ -70,21 +70,21 @@ Follow these four steps consistently throughout the workshop:
 > [!WARNING]  
 > Set up your environment, install your dependencies etc. **manually**. AI can be terrible at this and using AI for setup could add a lot of config issues to your project before you can even get started.
 
-- Use the GENERATE TICKETS prompt to create `TO-DO.md`. Remember to follow the IQRE methodology! Check that your tickets actually make sense so that you don't end up with a lot of vague, impossibly scoped tickets that no one could follow!
+- Use the GENERATE TO-DO prompt to create `TO-DO.md`. Remember to follow the IQRE methodology! Check that your tasks actually make sense so that you don't end up with a lot of vague, impossibly scoped tasks that no one could follow!
 - Set up environment, frameworks, folder structure, install dependencies
 
-- Review tickets for dependencies and overlaps
+- Review tasks for dependencies and overlaps
 
-> **Output**: Ready-to-code environment with structured tickets
+> **Output**: Ready-to-code environment with structured to-do list
 
 #### IMPLEMENTATION
 
-**Per Ticket Process**:
+**Per Task Process**:
 
 1. Use KICKOFF/REFRESH MEMORY prompt
 2. Implement features
 3. Make sure to review constantly
-4. Use CONTEXT RESET after ticket completion
+4. Use CONTEXT RESET after task completion
 
 **Between Sessions**:
 
@@ -96,7 +96,7 @@ Follow these four steps consistently throughout the workshop:
 #### CONTEXT MANAGEMENT
 
 - Use `HISTORY.md` for context summaries
-- Reset Claude's context window after each ticket
+- Reset Claude's context window after each task
 - Maintain clean workspace
 
 > **Output**: Archived context for reference, clean workspace

@@ -132,4 +132,12 @@ Follow these four steps consistently throughout the workshop:
 - Evolved standards documented in `CLAUDE.md`
 - Clear architectural decisions
 
+#### Common Pitfalls
+
+AI code generators often struggle with:
+- Anything to do with setting up projects, installing dependencies
+- Being too ambitious, agreeing to everything
+- Staying inside the scope when working on a task
+- Using outdated tech stack, outdated versions of dependencies
+
 **Remember**: You're the human-in-the-loop. Guide the AI, don't just accept its output.

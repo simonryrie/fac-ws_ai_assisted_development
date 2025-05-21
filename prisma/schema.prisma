@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Core models for the Travel Planning App
+
+model User {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  userTrips UserTrip[]
+}
+
+model CatalogTrip {
+  id          String               @id @default(uuid())
+  title       String
+  description String?
+  startDate   DateTime
+  endDate     DateTime
+  country     String
+  continent   String
+  locations   Location[]
+  userTrips   UserTrip[]
+  expenses    CatalogTripExpense[] // Base expenses for the catalog trip
+}
+
+model UserTrip {
+  id            String            @id @default(uuid())
+  userId        String
+  catalogTripId String
+  startDate     DateTime
+  endDate       DateTime
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  user          User              @relation(fields: [userId], references: [id])
+  catalogTrip   CatalogTrip       @relation(fields: [catalogTripId], references: [id])
+  activities    UserTripActivity[]
+}
+
+model Location {
+  id            String             @id @default(uuid())
+  name          String
+  catalogTripId String
+  arrivalDate   DateTime
+  departureDate DateTime
+  catalogTrip   CatalogTrip        @relation(fields: [catalogTripId], references: [id])
+  activities    ActivityLocation[]
+}
+
+model Activity {
+  id          String             @id @default(uuid())
+  title       String
+  description String?
+  duration    Int                // in minutes
+  cost        Float              // Fixed cost per activity
+  locations   ActivityLocation[]
+  userTrips   UserTripActivity[]
+}
+
+model ActivityLocation {
+  activityId String
+  locationId String
+  activity   Activity @relation(fields: [activityId], references: [id])
+  location   Location @relation(fields: [locationId], references: [id])
+
+  @@id([activityId, locationId])
+}
+
+model UserTripActivity {
+  userTripId String
+  activityId String
+  startTime  DateTime
+  userTrip   UserTrip  @relation(fields: [userTripId], references: [id])
+  activity   Activity  @relation(fields: [activityId], references: [id])
+
+  @@id([userTripId, activityId])
+}
+
+model CatalogTripExpense {
+  id            String      @id @default(uuid())
+  catalogTripId String
+  amount        Float
+  category      String      // food, lodging, transport, etc.
+  description   String
+  catalogTrip   CatalogTrip @relation(fields: [catalogTripId], references: [id])
+}

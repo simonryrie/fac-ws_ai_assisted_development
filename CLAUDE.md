@@ -1,80 +1,123 @@
 **IMPORTANT FOR CLAUDE: Reference this file before implementing anything**
 
-# Project: [Project Name]
+# Project: Travel Planning App
 
 ## Project Overview
 
-A brief description of the project, its purpose, and key goals.
+A SvelteKit application for planning and managing trips. Users can browse catalog trips, create personalized itineraries with activities, and track expenses. The app uses GraphQL for data management and SQLite for storage.
 
 ## Tech Stack
 
-- Languages: [list primary languages]
-- Frameworks: [list frameworks]
-- Tools: [list tools]
+- Languages: TypeScript
+- Frameworks: SvelteKit with Svelte 4
+- UI: TailwindCSS with custom components
+- API: GraphQL with Apollo Client and codegen
+- Database: SQLite with Prisma ORM
+- State: Svelte stores
+- Testing: Vitest
+- Documentation: Storybook, README, GraphQL schema docs
+- Tooling: ESLint, Prettier, Husky
 
 ## Code Style & Conventions
 
 ### Import/Module Standards
 
-- [Specify import standards]
+- Group imports by type (Svelte, external, internal)
+- Use absolute imports from `$lib` for project files
+- Destructure imports when importing multiple items
+
+```typescript
+// External libraries
+import { GraphQLClient } from 'graphql-request';
+import { browser } from '$app/environment';
+
+// Internal modules
+import { userStore } from '$lib/stores/userStore';
+import type { User, Trip } from '$lib/types';
+```
 
 ### Naming Conventions
 
-- [Functions naming convention]
-- [Classes/Components naming convention]
-- [Constants naming convention]
-- [Files naming convention]
+- Functions: camelCase (e.g., `createTrip`, `fetchActivities`)
+- Components: PascalCase (e.g., `TripCard.svelte`, `ActivityList.svelte`)
+- Constants: UPPER_SNAKE_CASE (e.g., `API_ENDPOINT`, `DEFAULT_LIMIT`)
+- Files: Lowercase for routes, PascalCase for components
+- Interfaces/Types: PascalCase with descriptive names
 
 ### Patterns to Follow
 
-- [Key architectural patterns]
-- [Error handling approaches]
-- [Code organisation principles]
+- Use layer-based architecture (components, stores, utils, server)
+- Handle GraphQL errors with Apollo Client error policies
+- Use SvelteKit's global error hooks for centralized error handling
+- Implement Svelte stores for state management
+- Follow SvelteKit's routing conventions
 
 ## Development Workflow
 
-- Branch strategy
-- Commit message format
-- PR requirements
+- Branch strategy: Feature branches from main
+- Commit message format: Conventional Commits (`feat(Banner): Build banner component`)
+- PR requirements: ESLint and tests must pass
 
 ## Testing Strategy
 
-- Test frameworks
-- Coverage requirements
-- Test naming conventions
+- Test framework: Vitest
+- Component tests: Testing library
+- Coverage target: 70% minimum
+- Test naming: `{unit-name}.test.ts` or `{unit-name}.test.js`
 
 ## Environment Setup
 
-- Required environment variables
-- Setup commands
-- Local development server
+- Required environment variables:
+  ```
+  DATABASE_URL="file:./dev.db"
+  ```
+- Setup commands:
+  ```bash
+  npm install
+  npx prisma generate
+  npx prisma migrate dev
+  ```
+- Local development server:
+  ```bash
+  npm run dev
+  ```
 
 ## Common Commands
 
 ```bash
 # Build command
-[command]
+npm run build
 
 # Test command
-[command]
+npm run test
 
 # Lint command
-[command]
+npm run lint
 
-# Check command
-[command]
+# Format command
+npm run format
 
 # Development server
-[command]
+npm run dev
 ```
 
 ## Project Structure
 
 Key directories and their purpose:
 
-- `/src` - [description]
-- `/tests` - [description]
-- [other important directories]
+- `/src` - Application source code
+  - `/lib` - Reusable code
+    - `/components` - UI components 
+    - `/components/shared` - Utility components (Button, etc.)
+    - `/stores` - Svelte stores for state management
+    - `/graphql` - GraphQL schema, queries, and mutations
+    - `/types` - TypeScript type definitions
+    - `/utils` - Helper functions
+    - `/server` - Server-side code
+  - `/routes` - SvelteKit routes
+- `/prisma` - Database schema and migrations
+- `/tests` - Test files
+- `/static` - Static assets
 
 ## Review Process Guidelines
 
@@ -103,8 +146,15 @@ Before submitting any code, ensure the following steps are completed:
 
 ## Known Issues & Workarounds
 
-Document any current limitations or workarounds Claude should be aware of.
+- SQLite limitations: For larger scale, consider migrating to PostgreSQL
+- Apollo Client setup with SvelteKit requires careful configuration
+- Client-side persistence uses localStorage (not secure for sensitive data)
 
 ## References
 
-Links to relevant external documentation, design docs, or resources.
+- [SvelteKit Documentation](https://kit.svelte.dev/docs)
+- [Apollo Client Documentation](https://www.apollographql.com/docs/react/)
+- [Prisma Documentation](https://www.prisma.io/docs/)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [FUNCTIONAL.md](FUNCTIONAL.md) - Functional requirements
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Technical architecture
